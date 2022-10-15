@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import imgSetting from "../../img/setting.png";
-import imgSeach from "../../img/search.png"
+import imgSeach from "../../img/search.png";
+import imgTinTuc from "../../img/tintuc.png";
+import imgShare from "../../img/share.png";
 
 const NavBar = () => {
     return (
@@ -18,11 +20,11 @@ const NavBar = () => {
                     <p className="text-[14px] leading-[22px]">Tạo phôi</p>
                 </li>
                 <li className="flex flex-row items-center pl-[24px] h-[40px] mb-[8px] hover:bg-[#E6F7FF] hover:border-r-solid hover:border-r-[3px] hover:border-r-[#1890FF] cursor-pointer">
-                    <img src={imgSetting} className="w-[14px] h-[14px] mr-[10px]" />
+                    <img src={imgTinTuc} className="w-[14px] h-[14px] mr-[10px]" />
                     <p>Tin tức</p>
                 </li>
                 <li className="flex flex-row items-center pl-[24px] h-[40px] mb-[8px] hover:bg-[#E6F7FF] hover:border-r-solid hover:border-r-[3px] hover:border-r-[#1890FF] cursor-pointer">
-                    <img src={imgSetting} className="w-[14px] h-[14px] mr-[10px]" />
+                    <img src={imgShare} className="w-[14px] h-[14px] mr-[10px]" />
                     <p>Share Ads</p>
                 </li>
             </ul>
