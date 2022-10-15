@@ -1,12 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import Admin from './Component/Admin/Admin';
+import Main from './Layout/Main';
 
 function App() {
   return (
-    <div className="App">
-      <Admin />
-    </div>
+      <Main />
   );
 }
 
