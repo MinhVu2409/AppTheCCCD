@@ -1,23 +1,29 @@
 import { Layout, Breadcrumb, Menu } from "antd";
 import React from "react";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
+import ListCard from "../App/page/ListCard";
+import MoreEbryos from "../App/page/MoreEmbryos";
+import EmbryosManagement from "../App/page/EmbryoManagement";
 
+import imgSetting from "../assets/img/setting.png";
 
 const menuItem = [
     {
         key: "1",
-        icon: "",
-        label: "nav 1"
+        icon: null,
+        label: <Link to="/" className="flex flex-row items-center"><img src={imgSetting} className="w-[13px] h-[14px] mr-[10px]"/>Tạo phôi</Link>
     },
     {
         key: "2",
         icon: "",
-        label: "nav 2"
+        label: <Link to="/themphoi">Thêm phôi</Link>
     },
     {
         key: "3",
-        icon: null,
-        label: "nav 3"
-    }
+        icon: "",
+        label: <Link to="/quanlyphoi">Quản lý phôi</Link>
+    },
+    
 ]
 
 
@@ -25,7 +31,7 @@ const Main = ({ children }) => {
     const { Header, Sider, Content } = Layout;
 
     return (
-        <Layout className="h-[100vh]">
+        <Layout className="min-h-[100vh]">
             <Header className="header !bg-[red]" >
                 <div className="logo" />
             </Header>
@@ -60,7 +66,7 @@ const Main = ({ children }) => {
                             minHeight: 280
                         }}
                     >
-                        Content
+                        <Outlet/>
                     </Content>
                 </Layout>
             </Layout>

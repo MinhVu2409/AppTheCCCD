@@ -1,9 +1,9 @@
 import React from "react";
-import imgWarning from "../../img/warning.png";
+// import imgWarning from "../../assets/img/warning.png";
 
 const MoreEbryos = () => {
     return (
-        <div className="w-[1056px] min-h-[100vh] bg-[#F5F5F5] flex flex-row pt-[65px] pl-[53px]">
+        <div className="  flex flex-row  pl-[53px]">
             <div className="mr-[37px] flex flex-col items-center w-[524px] bg-[#FFFFFF]">
                 <div className="w-[434px] h-[204px] bg-[#D9D9D9] flex flex-row mt-[26px]" >
                     <div className="w-[84px] h-[116px] bg-[#FFFFFF] ml-[42px] mt-[37px] mr-[47px] mb-[51px]"></div>
@@ -15,15 +15,6 @@ const MoreEbryos = () => {
                         <div className="w-[100%] h-[9px] mb-[12px] bg-[#FFFFFF]"></div>
                     </div>
                 </div>
-                {/* <div className="flex flex-row w-[434px]" >
-                    <div className="flex flex-row text-start">
-                        <img src={imgWarning} className="w-[23px] h-[21px]" />
-                        <p className="text-center">Thông tin mô tả và hướng dẫn</p>
-                    </div>
-                    <div className="w-[378px]">
-                        <p></p>
-                    </div>
-                </div> */}
             </div>
             <div className="w-[350px] bg-[#FFFFFF] items-start text-left relative">
                 <form className="px-[32px] flex flex-col  mt-[26px]" >
