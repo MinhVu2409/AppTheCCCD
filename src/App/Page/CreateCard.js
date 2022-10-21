@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Col, Row, Switch } from 'antd';
-import imgCCCD from "../../assets/img/cccd.jpg";
+import * as Yup from "yup";
 import { useFormik } from "formik";
+
+import imgCCCD from "../../assets/img/cccd.jpg";
+
 const CreateCard = () => {
-    const [valueForm, setValueForm ] = useState();
-    const [valueSwitchLinkImg,setValueSwitchLinkImg] = useState(false)
+    const [valueForm, setValueForm] = useState();
+    const [valueSwitchLinkImg, setValueSwitchLinkImg] = useState(false)
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -13,6 +16,11 @@ const CreateCard = () => {
             gender: 'F',
             dateOfBirth: ''
         },
+        validationSchema: Yup.object({
+            firstName: Yup.string().required("Please do required!!!"),
+            lastName: Yup.string().required("Please do required!!!"),
+            linkImg: Yup.string().required("Please do required!!!"),
+        }),
         onSubmit: values => {
             setValueForm(values)
         },
@@ -38,6 +46,11 @@ const CreateCard = () => {
                             onChange={formik.handleChange}
                             value={formik.values.firstName}
                         />
+                        {
+                            formik.errors.firstName && (
+                                <span className="text-[red] text-[12px] ml-[10px]">{formik.errors.firstName}</span>
+                            )
+                        }
                     </Col>
                 </Row>
                 <Row align="middle" className="my-[15px]">
@@ -52,7 +65,13 @@ const CreateCard = () => {
                             onChange={formik.handleChange}
                             value={formik.values.lastName}
                         />
+                        {
+                            formik.errors.lastName && (
+                                <span className="text-[red] text-[12px] ml-[10px]">{formik.errors.lastName}</span>
+                            )
+                        }
                     </Col>
+
                 </Row>
                 <Row align="middle" className="my-[15px]">
                     <Col flex="2"><label for="linkImg">LINH ẢNH</label></Col>
@@ -66,7 +85,12 @@ const CreateCard = () => {
                                 onChange={formik.handleChange}
                                 value={formik.values.linkImg}
                             />
-                            <Switch  onClick={()=>setValueSwitchLinkImg(!valueSwitchLinkImg)}/>
+                            <Switch onClick={() => setValueSwitchLinkImg(!valueSwitchLinkImg)} />
+                            {
+                                formik.errors.linkImg && (
+                                    <span className="text-[red] text-[12px] ml-[10px] block">{formik.errors.linkImg}</span>
+                                )
+                            }
                         </div>
                     </Col>
                 </Row>

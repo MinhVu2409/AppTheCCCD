@@ -6,12 +6,14 @@ import MoreEbryos from "../App/page/MoreEmbryos";
 import EmbryosManagement from "../App/page/EmbryoManagement";
 
 import imgSetting from "../assets/img/setting.png";
+import { Input } from 'antd';
 
+const { Search } = Input;
 const menuItem = [
     {
         key: "1",
         icon: null,
-        label: <Link to="/" className="flex flex-row items-center"><img src={imgSetting} className="w-[13px] h-[14px] mr-[10px]"/>Tạo phôi</Link>
+        label: <Link to="/" className="flex flex-row items-center"><img src={imgSetting} className="w-[13px] h-[14px] mr-[10px]" />Tạo phôi</Link>
     },
     {
         key: "2",
@@ -23,7 +25,7 @@ const menuItem = [
         icon: "",
         label: <Link to="/quanlyphoi">Quản lý phôi</Link>
     },
-    
+
 ]
 
 
@@ -36,12 +38,14 @@ const Main = ({ children }) => {
                 <div className="logo" />
             </Header>
             <Layout>
-                <Sider width={200} className="site-layout-background" theme="light">
+                <Sider width={300} className="site-layout-background" theme="light" >
+                    <Search placeholder="input search text" enterButton className="pt-[20px] pb-[10px] px-[20px] border-b-[1px] border-b-solid border-b-[#d0cece]" />
                     <Menu
                         theme="light"
                         mode="inline"
                         defaultSelectedKeys={["1"]}
                         items={menuItem}
+                        style={{padding:"20px"}}
                     />
                 </Sider>
                 <Layout
@@ -66,7 +70,7 @@ const Main = ({ children }) => {
                             minHeight: 280
                         }}
                     >
-                        <Outlet/>
+                        <Outlet />
                     </Content>
                 </Layout>
             </Layout>
